@@ -39,17 +39,18 @@ def print_tcr(str):
         print(str)
 
 
-# Incoming parameters
-parser = argparse.ArgumentParser(description='VISA BASEII clearing parser')
-parser.add_argument("-f", dest='l_src', help="Source file name")
-parser.add_argument("-l", type=int, dest='l_string', help="Row number in file")
-args = parser.parse_args()
+if __name__ == '__main__':
+    # Incoming parameters
+    parser = argparse.ArgumentParser(description='VISA BASEII clearing parser')
+    parser.add_argument("-f", dest='l_src', help="Source file name")
+    parser.add_argument("-l", type=int, dest='l_string', help="Row number in file")
+    args = parser.parse_args()
 
-l_src = str(args.l_src)
-l_string = int(args.l_string)
+    l_src = str(args.l_src)
+    l_string = int(args.l_string)
 
-curr_str = find_string(l_src, l_string)
+    curr_str = find_string(l_src, l_string)
 
-print('Row from file:')
-print(curr_str)
-print_tcr(curr_str)
+    print('Row from file:')
+    print(curr_str)
+    print_tcr(curr_str)
